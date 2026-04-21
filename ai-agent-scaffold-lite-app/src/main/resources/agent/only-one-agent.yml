@@ -1,0 +1,32 @@
+ai:
+  agent:
+    config:
+      tables:
+        testAgent02:
+          app-name: testAgent02
+          agent:
+            agent-id: 100002
+            agent-name: 单一智能体
+            agent-desc: 单一智能体
+          module:
+            ai-api:
+              base-url: https://api.openai-proxy.org
+              api-key: sk-Jgeobhiq9QkE9gvgGgz386rKOsIlv3q21TQiJAWp3H7fdtFi
+              completions-path: v1/chat/completions
+              embeddings-path: v1/embeddings
+            chat-model:
+              model: gpt-4.1
+              tool-mcp-list:
+                - sse:
+                    name: baidu-search
+                    base-uri: http://appbuilder.baidu.com/v2/ai_search/mcp/
+                    sse-endpoint: sse?api_key=bce-v3/ALTAK-GpnVprzRwtMajUHLSh6oh/d0b4925fbc8e85c1c0924210238b336e40b465cf
+                    request-timeout: 5000
+            agents:
+              - name: onlyAgent
+                description: 小傅哥学习项目计划
+                instruction: |
+                  通过百度检索小傅哥编程实战项目，并根据检索内容，针对初学用户给出学习计划。
+            runner:
+              agent-name:onlyAgent
+
